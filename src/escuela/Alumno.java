@@ -4,10 +4,10 @@ import java.util.Calendar;
 
 public class Alumno extends Persona {
 
-    int ingresodias = 0;
-    int ingresomeses = 0;
-    int ingresoanos = 0;
-    Boolean becado ;
+    private int ingresodias;
+    private int ingresomeses;
+    private int ingresoanos;
+    private Boolean becado;
 
     public Alumno(String nombre, String apellido, int dia, int mes, int ano, int ingresodias, int ingresomeses,
             int ingresoanos, boolean becado) {
@@ -18,8 +18,6 @@ public class Alumno extends Persona {
         this.becado = becado;
 
     }
-
-   
 
     public int getDias() {
         return ingresodias;
@@ -37,20 +35,56 @@ public class Alumno extends Persona {
         return becado;
     }
 
-    public void fechaIngreso() {
-        System.out.println("Ingreso el día: " + ingresodias + " del mes: " + ingresomeses + " del año: " + ingresoanos);
-
+    public void setIngresodias(int ingresodias) {
+        this.ingresodias = ingresodias;
     }
 
-    public void Becado() {
-        if (becado == true) {
-            System.out.println("El alumno: " + getNombre() + " " + getApellido() + " esta becado");
-        }else{
-            System.out.println("El alumno: " + getNombre() + " " + getApellido() + " no esta becado");
-       
-
-    }
+    public void setIngresomeses(int ingresomeses) {
+        this.ingresomeses = ingresomeses;
     }
 
+    public void setIngresoanos(int ingresoanos) {
+        this.ingresoanos = ingresoanos;
+    }
+
+    public void setBecado(Boolean becado) {
+        this.becado = becado;
+    }
+
+    public class EstadoAcademico {
+
+        private int añoIngreso;
+        private int añoCursadoActual;
+
+        public EstadoAcademico(int añoIngreso, int añoCursadoActual) {
+            this.añoIngreso = añoIngreso;
+            this.añoCursadoActual = añoCursadoActual;
+        }
+
+        public int getAñoIngreso() {
+            return añoIngreso;
+        }
+
+        public int getAñoCursadoActual() {
+            return añoCursadoActual;
+        }
+
+        public void setAñoIngreso(int añoIngreso) {
+            this.añoIngreso = añoIngreso;
+        }
+
+        public void setAñoCursadoActual(int añoCursadoActual) {
+            this.añoCursadoActual = añoCursadoActual;
+        }
+
+        public void calcularPromedioAprobadas(int cantMaterias, int materiasAprob) {
+            int total;
+            total = materiasAprob / cantMaterias;
+            System.out.println(total);
+            total = (materiasAprob * total) / cantMaterias;
+            System.out.println("Tienes un promedio de:  " + total + "% materias aprobadas");
+        }
+
+    }
 
 }
