@@ -11,11 +11,11 @@ import static javax.swing.UIManager.get;
 
 public class Persona {
 
-    private String nombre;
-    private String apellido;
-    private int dia;
-    private int mes;
-    private int ano;
+    private String nombre = "No ingreso nombre";
+    private String apellido = "No ingreso apellido";
+    private int dia = 0;
+    private int mes = 0;
+    private int ano = 0;
 
     public Persona(String nombre, String apellido, int dia, int mes, int ano) {
         this.nombre = nombre;
